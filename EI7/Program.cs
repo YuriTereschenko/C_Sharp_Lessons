@@ -12,59 +12,23 @@ Console.WriteLine("Введите х координату вашей фигур�
 int xb= Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите y координату вашей фигуры");
 int yb= Convert.ToInt32(Console.ReadLine());
-int xa1=xa;
-int ya1=ya;
- 
- while (xa1<=8 & ya1<=8 & xa1 >=1 & ya1>=1)
+void Move(int x, int y, int xM, int yM)
+{
+     while (x<=8 & y<=8 & x >=1 & y>=1)
  {
-   Console.WriteLine(xa1 +" "+ ya1);
-    if (xa1==xb & ya1== yb)
+   Console.WriteLine(x +" "+ y);
+    if (x == xb & y == yb)
     {
      Console.WriteLine("Фигура в опасности, миллорд");
      System.Environment.Exit(0); 
-    }
-    xa1++;
-    ya1--;
- }
- xa1=xa;
- ya1=ya;
- 
-while (xa1<=8 & ya1<=8 & xa1 >=1 & ya1>=1)
-{
-    Console.WriteLine(xa1 +" "+ ya1);
-    if (xa1==xb & ya1== yb)
-    {
-     Console.WriteLine("Фигура в опасности, миллорд");
-     System.Environment.Exit(0); 
-    }
-    xa1++;
-    ya1++;
-}
- xa1=xa;
- ya1=ya;
-while (xa1<=8 & ya1<=8 & xa1 >=1 & ya1>=1)
-{
-    Console.WriteLine(xa1 +" "+ ya1);
-    if (xa1==xb & ya1== yb)
-    {
-     Console.WriteLine("Фигура в опасности, миллорд");
-     System.Environment.Exit(0); 
-    }
-    xa1--;
-    ya1--;
-}
-xa1=xa;
-ya1=ya;
+    } 
+    x=x+xM;
+    y=y+yM;
 
-while (xa1<=8 & ya1<=8 & xa1 >=1 & ya1>=1)
-{
-    Console.WriteLine(xa1 +" "+ ya1);
-    if (xa1==xb & ya1== yb)
-    {
-     Console.WriteLine("Фигура в опасности, миллорд");
-     System.Environment.Exit(0); 
-    }
-    xa1--;
-    ya1++;
 }
+}
+Move(xa, ya, 1, -1);
+Move(xa, ya, 1, 1);
+Move(xa, ya, -1, -1);
+Move(xa, ya, -1, 1);
 Console.WriteLine("Можно разжать булки, миллорд");
