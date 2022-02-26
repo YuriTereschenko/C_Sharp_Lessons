@@ -12,8 +12,14 @@ Console.WriteLine("Введите х координату вашей фигур�
 int xb= Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите y координату вашей фигуры");
 int yb= Convert.ToInt32(Console.ReadLine());
-void Move(int x, int y, int xM, int yM)
+void Move(int x, int y)
 {
+     int xM = 0;
+     int yM = 0;
+     if (x>xb) xM=-1;
+     if (x<xb) xM=1;
+     if (y>yb) yM=-1;
+     if (y<yb) yM=1;
      while (x<=8 & y<=8 & x >=1 & y>=1)
  {
    Console.WriteLine(x +" "+ y);
@@ -27,8 +33,5 @@ void Move(int x, int y, int xM, int yM)
 
 }
 }
-Move(xa, ya, 1, -1);
-Move(xa, ya, 1, 1);
-Move(xa, ya, -1, -1);
-Move(xa, ya, -1, 1);
+Move(xa,ya);
 Console.WriteLine("Можно разжать булки, миллорд");
