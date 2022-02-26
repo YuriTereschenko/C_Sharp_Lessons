@@ -12,6 +12,7 @@ void PrintArray( int[] collect)
 {
     int index = 0;
     int len = collect.Length;
+    Console.WriteLine("Array is:");
     while (index<len)
     {
         Console.Write(collect[index]+" ");
@@ -37,9 +38,9 @@ void FindIndex( int[] ArrayForFind, int NumberForFind)
 }
 int[] array = new int[10];
 Console.Clear();
-Console.WriteLine("Enter number to looking for.");
-int LFnumber = Convert.ToInt32(Console.ReadLine()); 
 FillArray(array);
 PrintArray(array);
 Console.WriteLine();
+Console.WriteLine("Enter number to looking for in this array");
+int LFnumber = Convert.ToInt32(Console.ReadLine());
 FindIndex(array, LFnumber);
