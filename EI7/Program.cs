@@ -3,7 +3,11 @@
   Даны натуральные числа a, b, c, d, каждое из которых не превосходит 8.
 а) на поле (a, b) расположена ладья. Определить, угрожает ли она полю (c, d); */
 using System;
+bool colorBlack = true;
 Console.Clear();
+Console.WriteLine("Привет, любитель шахмат! Данная программа подскажет, угрожает ли тебе в ближайший ход фигура оппонента");
+Console.WriteLine("Угрозу от какой фигуры ты хочешь проверить? 1 - Конь, 2 - Слон, 3 - Ладья");
+int ChessPiece = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите х координату фигуры оппонента");
 int xa= Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите y координату фигуры оппонента");
@@ -22,8 +26,7 @@ void MoveRook(int x, int y)
      if (y<yb) yM=1;
      while (x<=8 & y<=8 & x >=1 & y>=1)
  {
-   Console.WriteLine(x +" "+ y);
-    if (x == xb & y == yb)
+       if (x == xb & y == yb)
     {
      Console.WriteLine("Фигура в опасности, миллорд");
      System.Environment.Exit(0); 
@@ -35,8 +38,7 @@ void MoveRook(int x, int y)
 }
 void MoveBishop(int x, int y)
 {
-     if (x != xb & y != yb) 
-     {
+          {
           Console.WriteLine("Можно расслабить булки, миллорд");
           System.Environment.Exit(0);
      }
@@ -58,7 +60,7 @@ void MoveBishop(int x, int y)
     } 
     y +=yM;
     x +=xM;
-     }                                                                //х+2 
+     }                                                                 
 }
 void MoveKnight(int x, int y)
 {
@@ -74,5 +76,7 @@ if (y>yb) yM=-1;
     }
 }
 }
-
+if (ChessPiece == 1) MoveKnight(xa,ya);
+if (ChessPiece == 2) MoveBishop(xa,ya);
+if (ChessPiece == 3) MoveRook(xa,ya);
 Console.WriteLine("Можно разжать булки, миллорд");
